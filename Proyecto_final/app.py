@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, jsonify, session
 from models import db, Usuario
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 
@@ -340,4 +341,5 @@ def actualizar_foto():
 if __name__ == '__main__':
     print("🚀 Iniciando Power Core Gym...")
     print("📍 Servidor corriendo en: http://localhost:3000")
+
     app.run(debug=True, host='0.0.0.0', port=3000)
