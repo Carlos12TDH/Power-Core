@@ -340,6 +340,6 @@ def actualizar_foto():
 
 if __name__ == '__main__':
     print("🚀 Iniciando Power Core Gym...")
-    print("📍 Servidor corriendo en: http://localhost:3000")
+    port = int(os.environ.get('PORT', 3000))
+    app.run(debug=False, host='0.0.0.0', port=port)
 
-    app.run(debug=True, host='0.0.0.0', port=3000)
