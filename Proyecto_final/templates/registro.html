@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Power Core Gym</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav id="barra-navegacion">
+        <div class="logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='95' fill='%23a855f7'/%3E%3Cpath d='M60 85 L60 115 M140 85 L140 115 M70 100 L130 100 M50 75 L70 75 L70 125 L50 125 M130 75 L150 75 L150 125 L130 125' stroke='white' stroke-width='6' fill='none'/%3E%3C/svg%3E" alt="Logo Power Core">
+            <h2>POWER CORE</h2>
+        </div>
+        
+        <ul class="enlaces-navegacion">
+            <li><a href="/">Volver al Inicio</a></li>
+        </ul>
+        
+        <a href="/#planes" class="boton-inscribete">Ver Planes</a>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL DE REGISTRO/LOGIN -->
+    <section class="seccion-auth">
+        <div class="contenedor-auth">
+            <!-- FORMULARIO DE INICIO DE SESIÓN -->
+            <div class="formulario-contenedor" id="formularioLogin">
+                <div class="encabezado-formulario">
+                    <h2>Iniciar Sesión</h2>
+                    <p>¡Bienvenido de nuevo! Ingresa a tu cuenta</p>
+                </div>
+
+                <form class="formulario-auth" id="formLogin">
+                    <div class="grupo-input">
+                        <label for="loginEmail">Correo Electrónico</label>
+                        <input type="email" id="loginEmail" name="email" placeholder="tu@email.com" required>
+                        <span class="icono-input">📧</span>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="loginPassword">Contraseña</label>
+                        <input type="password" id="loginPassword" name="password" placeholder="••••••••" required>
+                        <span class="icono-input">🔒</span>
+                        <button type="button" class="ver-password" onclick="togglePassword('loginPassword')">👁️</button>
+                    </div>
+
+                    <div class="opciones-form">
+                        <label class="recordar">
+                            <input type="checkbox" name="recordar">
+                            <span>Recordarme</span>
+                        </label>
+                        <a href="#" class="link-recuperar">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="boton-submit">
+                        <span>Iniciar Sesión</span>
+                        <span class="icono-boton">→</span>
+                    </button>
+
+                    <div class="divisor">
+                        <span>O</span>
+                    </div>
+
+                    <div class="botones-sociales">
+                        <button type="button" class="boton-social google">
+                            <span>G</span> Google
+                        </button>
+                        <button type="button" class="boton-social facebook">
+                            <span>f</span> Facebook
+                        </button>
+                    </div>
+
+                    <p class="cambiar-formulario">
+                        ¿No tienes cuenta? <a href="#" onclick="cambiarFormulario('registro')">Regístrate aquí</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- FORMULARIO DE REGISTRO -->
+            <div class="formulario-contenedor oculto" id="formularioRegistro">
+                <div class="encabezado-formulario">
+                    <h2>Crear Cuenta</h2>
+                    <p>Únete a Power Core y comienza tu transformación</p>
+                </div>
+
+                <form class="formulario-auth" id="formRegistro">
+                    <!-- NOMBRE DE PERFIL - NUEVO CAMPO -->
+                    <div class="grupo-input">
+                        <label for="regNombrePerfil">Nombre de Perfil (Único)</label>
+                        <input type="text" id="regNombrePerfil" name="nombrePerfil" placeholder="powercore_user123" required maxlength="50">
+                        <span class="icono-input">@</span>
+                        <span class="mensaje-disponibilidad" id="mensajeDisponibilidad"></span>
+                    </div>
+
+                    <div class="fila-input">
+                        <div class="grupo-input">
+                            <label for="regNombre">Nombre</label>
+                            <input type="text" id="regNombre" name="nombre" placeholder="Juan" required>
+                            <span class="icono-input">👤</span>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="regApellido">Apellido</label>
+                            <input type="text" id="regApellido" name="apellido" placeholder="Pérez" required>
+                            <span class="icono-input">👤</span>
+                        </div>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="regEmail">Correo Electrónico</label>
+                        <input type="email" id="regEmail" name="email" placeholder="tu@email.com" required>
+                        <span class="icono-input">📧</span>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="regTelefono">Teléfono</label>
+                        <input type="tel" id="regTelefono" name="telefono" placeholder="+57 300 123 4567" required>
+                        <span class="icono-input">📱</span>
+                    </div>
+
+                    <div class="fila-input">
+                        <div class="grupo-input">
+                            <label for="regFechaNacimiento">Fecha de Nacimiento</label>
+                            <input type="date" id="regFechaNacimiento" name="fechaNacimiento" required>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="regGenero">Género</label>
+                            <select id="regGenero" name="genero" required>
+                                <option value="">Seleccionar</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="regPassword">Contraseña</label>
+                        <input type="password" id="regPassword" name="password" placeholder="••••••••" required>
+                        <span class="icono-input">🔒</span>
+                        <button type="button" class="ver-password" onclick="togglePassword('regPassword')">👁️</button>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="regPasswordConfirm">Confirmar Contraseña</label>
+                        <input type="password" id="regPasswordConfirm" name="passwordConfirm" placeholder="••••••••" required>
+                        <span class="icono-input">🔒</span>
+                        <button type="button" class="ver-password" onclick="togglePassword('regPasswordConfirm')">👁️</button>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="regPlan">Plan de Membresía</label>
+                        <select id="regPlan" name="plan" required>
+                            <option value="">Seleccionar Plan</option>
+                            <option value="smart">Plan Smart - $59.900/mes</option>
+                            <option value="fit">Plan Fit - $89.900/mes</option>
+                            <option value="black">Plan Black - $159.900/mes</option>
+                        </select>
+                    </div>
+
+                    <div class="opciones-form">
+                        <label class="recordar">
+                            <input type="checkbox" name="terminos" required>
+                            <span>Acepto los <a href="#" class="link-recuperar">términos y condiciones</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="boton-submit">
+                        <span>Crear Cuenta</span>
+                        <span class="icono-boton">✓</span>
+                    </button>
+
+                    <div class="divisor">
+                        <span>O regístrate con</span>
+                    </div>
+
+                    <div class="botones-sociales">
+                        <button type="button" class="boton-social google">
+                            <span>G</span> Google
+                        </button>
+                        <button type="button" class="boton-social facebook">
+                            <span>f</span> Facebook
+                        </button>
+                    </div>
+
+                    <p class="cambiar-formulario">
+                        ¿Ya tienes cuenta? <a href="#" onclick="cambiarFormulario('login')">Inicia sesión aquí</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- IMAGEN LATERAL -->
+        <div class="imagen-lateral">
+            <div class="contenido-imagen">
+                <h3>Transforma Tu Vida</h3>
+                <p>Únete a miles de personas que ya están alcanzando sus objetivos con Power Core</p>
+                <div class="estadisticas">
+                    <div class="stat">
+                        <h4>5000+</h4>
+                        <p>Miembros Activos</p>
+                    </div>
+                    <div class="stat">
+                        <h4>50+</h4>
+                        <p>Clases Semanales</p>
+                    </div>
+                    <div class="stat">
+                        <h4>24/7</h4>
+                        <p>Acceso</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

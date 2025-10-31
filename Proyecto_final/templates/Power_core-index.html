@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Core - Cree en ti, supera tus límites</title>
+    html<link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav id="barra-navegacion">
+        <div class="logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='95' fill='%23a855f7'/%3E%3Cpath d='M60 85 L60 115 M140 85 L140 115 M70 100 L130 100 M50 75 L70 75 L70 125 L50 125 M130 75 L150 75 L150 125 L130 125' stroke='white' stroke-width='6' fill='none'/%3E%3C/svg%3E" alt="Logo Power Core">
+            <h2>POWER CORE</h2>
+        </div>
+        
+        <ul class="enlaces-navegacion">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#instalaciones">Instalaciones</a></li>
+            <li><a href="#planes">Planes</a></li>
+            <li><a href="#clases">Clases</a></li>
+            <li><a href="#entrenadores">Entrenadores</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        
+        <div class="botones-navegacion">
+           <a href="/registro" class="boton-iniciar-sesion">Iniciar Sesión</a>
+           <a href="/registro" class="boton-inscribete">¡Inscríbete Ya!</a>
+        </div>
+    </nav>
+
+    <!-- CARRUSEL DE PROMOCIONES -->
+    <section class="seccion-carrusel" id="inicio">
+        <div class="contenedor-carrusel" id="contenedorCarrusel">
+            <!-- Diapositiva 1 -->
+            <div class="diapositiva-carrusel">
+                <div class="contenido-diapositiva">
+                    <div class="texto-promocion">
+                        <div class="etiqueta-tiempo">SOLO HASTA EL 15/10</div>
+                        <h1>SIN MIEDO<br>AL <span class="resaltado">CAMBIO</span></h1>
+                        <p>El cambio no da miedo,<br>lo que asusta es quedarte igual</p>
+                    </div>
+                    <div class="detalles-promocion">
+                        <h2>INSCRÍBETE<br><span class="resaltado">2 PRIMEROS<br>MESES</span></h2>
+                        <div class="precio">$79.900</div>
+                        <p>CADA UNO POR SOLO</p>
+                        <p style="font-size: 14px; margin-top: 10px;">EN PLANES BLACK, FIT Y SMART</p>
+                        <button class="boton-llamada-accion">ENTRENA CON ESTA PROMO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 2 -->
+            <div class="diapositiva-carrusel">
+                <div class="contenido-diapositiva">
+                    <div class="texto-promocion">
+                        <div class="etiqueta-tiempo">OFERTA EXCLUSIVA</div>
+                        <h1>PLAN <span class="resaltado">BLACK</span></h1>
+                        <p>Acceso ilimitado a todas<br>nuestras instalaciones</p>
+                    </div>
+                    <div class="detalles-promocion">
+                        <div class="precio">$159.900</div>
+                        <p>POR MES</p>
+                        <button class="boton-llamada-accion">ÚNETE AHORA</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 3 -->
+            <div class="diapositiva-carrusel">
+                <div class="contenido-diapositiva">
+                    <div class="texto-promocion">
+                        <div class="etiqueta-tiempo">NUEVO</div>
+                        <h1>CLASES <span class="resaltado">GRUPALES</span></h1>
+                        <p>Más de 50 clases semanales<br>con instructores certificados</p>
+                    </div>
+                    <div class="detalles-promocion">
+                        <h2>INCLUIDO EN TU<br><span class="resaltado">MEMBRESÍA</span></h2>
+                        <button class="boton-llamada-accion">VER HORARIOS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="flecha-carrusel flecha-izquierda" onclick="moverCarrusel(-1)">‹</button>
+        <button class="flecha-carrusel flecha-derecha" onclick="moverCarrusel(1)">›</button>
+        <div class="puntos-carrusel" id="puntosCarrusel"></div>
+    </section>
+
+    <!-- SECCIÓN DE EQUIPAMIENTO -->
+    <section class="seccion-caracteristicas">
+        <div class="tarjeta-caracteristica">
+            <div class="contenido-caracteristica">
+                <h2>Equipamiento de Última Generación</h2>
+                <p>Contamos con las máquinas más modernas y tecnología de punta para que alcances tus objetivos. Nuestro gimnasio está equipado con lo mejor del mercado, desde máquinas cardiovasculares con pantallas interactivas hasta equipos de musculación de marcas premium.</p>
+            </div>
+            <div class="galeria-imagenes">
+                <div class="imagen-galeria">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600" alt="Área de pesas">
+                    <div class="overlay-imagen">
+                        <h3>Área de Pesas</h3>
+                        <p>Equipos profesionales</p>
+                    </div>
+                </div>
+                <div class="imagen-galeria">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600" alt="Cardio">
+                    <div class="overlay-imagen">
+                        <h3>Zona Cardio</h3>
+                        <p>Tecnología interactiva</p>
+                    </div>
+                </div>
+                <div class="imagen-galeria">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600" alt="Funcional">
+                    <div class="overlay-imagen">
+                        <h3>Área Funcional</h3>
+                        <p>Entrenamiento completo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE ENTRENADORES -->
+    <section class="seccion-caracteristicas fondo-oscuro" id="entrenadores">
+        <div class="tarjeta-caracteristica invertida">
+            <div class="galeria-imagenes">
+                <div class="tarjeta-entrenador">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400" alt="Entrenador 1">
+                    <div class="info-entrenador">
+                        <h3>Carlos Mendoza</h3>
+                        <p>Especialista en Musculación</p>
+                        <span class="certificacion">Certificado NSCA-CPT</span>
+                    </div>
+                </div>
+                <div class="tarjeta-entrenador">
+                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400" alt="Entrenador 2">
+                    <div class="info-entrenador">
+                        <h3>María Rodríguez</h3>
+                        <p>Entrenadora de Crossfit</p>
+                        <span class="certificacion">Certificada Level 2</span>
+                    </div>
+                </div>
+                <div class="tarjeta-entrenador">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400" alt="Entrenador 3">
+                    <div class="info-entrenador">
+                        <h3>Andrés López</h3>
+                        <p>Coach de Alto Rendimiento</p>
+                        <span class="certificacion">Certificado ACE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contenido-caracteristica">
+                <h2>Entrenadores Certificados</h2>
+                <p>Nuestro equipo de profesionales está certificado internacionalmente y listo para ayudarte a alcanzar tus metas. Cada entrenador cuenta con años de experiencia y especialización en diferentes disciplinas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE INSTALACIONES -->
+    <section class="seccion-caracteristicas" id="instalaciones">
+        <div class="tarjeta-caracteristica">
+            <div class="contenido-caracteristica">
+                <h2>Instalaciones Amplias y Modernas</h2>
+                <p>Disfruta de espacios diseñados para tu comodidad y rendimiento óptimo. Contamos con áreas especializadas para cada tipo de entrenamiento: zona de peso libre, área funcional, sala de spinning, estudios de yoga y pilates.</p>
+            </div>
+            <div class="galeria-imagenes">
+                <div class="imagen-galeria">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600" alt="Instalación 1">
+                    <div class="overlay-imagen">
+                        <h3>Salas Amplias</h3>
+                        <p>Espacio para entrenar</p>
+                    </div>
+                </div>
+                <div class="imagen-galeria">
+                    <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=600" alt="Instalación 2">
+                    <div class="overlay-imagen">
+                        <h3>Vestuarios Premium</h3>
+                        <p>Comodidad total</p>
+                    </div>
+                </div>
+                <div class="imagen-galeria">
+                    <img src="https://images.unsplash.com/photo-1570829460005-c840387bb1ca?w=600" alt="Instalación 3">
+                    <div class="overlay-imagen">
+                        <h3>Áreas Especializadas</h3>
+                        <p>Para cada disciplina</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CLASES -->
+    <section class="seccion-caracteristicas fondo-oscuro" id="clases">
+        <div class="tarjeta-caracteristica invertida">
+            <div class="galeria-imagenes">
+                <div class="imagen-galeria">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600" alt="Clase 1">
+                    <div class="overlay-imagen">
+                        <h3>Spinning</h3>
+                        <p>Alta energía</p>
+                    </div>
+                </div>
+                <div class="imagen-galeria">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600" alt="Clase 2">
+                    <div class="overlay-imagen">
+                        <h3>Yoga</h3>
+                        <p>Equilibrio mental</p>
+                    </div>
+                </div>
+                <div class="imagen-galeria">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="Clase 3">
+                    <div class="overlay-imagen">
+                        <h3>Crossfit</h3>
+                        <p>Entrenamiento intenso</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contenido-caracteristica">
+                <h2>Variedad de Clases Grupales</h2>
+                <p>Más de 50 clases semanales: spinning, yoga, pilates, zumba, crossfit y más. Nuestras clases están diseñadas para todos los niveles, desde principiantes hasta avanzados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANES DE MEMBRESÍA -->
+    <section class="seccion-planes" id="planes">
+        <h2>Elige tu Plan y Entrena Ya</h2>
+        <div class="contenedor-planes">
+            <div class="tarjeta-plan destacado">
+                <h3 class="nombre-plan">Plan Black</h3>
+                <div class="precio-plan">$159.900</div>
+                <p class="duracion-plan">Por mes</p>
+                <ul class="beneficios-plan">
+                    <li>Acceso ilimitado 24/7</li>
+                    <li>Todas las sedes</li>
+                    <li>Clases grupales ilimitadas</li>
+                    <li>Entrenador personal (2 sesiones/mes)</li>
+                    <li>Zona de crossfit y funcional</li>
+                    <li>Sauna y vapor</li>
+                    <li>Estacionamiento gratis</li>
+                    <li>Invita un amigo gratis 2 veces/mes</li>
+                </ul>
+                <button class="boton-plan">Seleccionar Plan</button>
+            </div>
+
+            <div class="tarjeta-plan">
+                <h3 class="nombre-plan">Plan Fit</h3>
+                <div class="precio-plan">$89.900</div>
+                <p class="duracion-plan">Por mes</p>
+                <ul class="beneficios-plan">
+                    <li>Acceso de 5 AM a 10 PM</li>
+                    <li>Sede principal</li>
+                    <li>Clases grupales ilimitadas</li>
+                    <li>Zona de musculación completa</li>
+                    <li>Vestuarios con duchas</li>
+                    <li>Asesoría inicial gratuita</li>
+                    <li>Descuentos en productos</li>
+                </ul>
+                <button class="boton-plan">Seleccionar Plan</button>
+            </div>
+
+            <div class="tarjeta-plan">
+                <h3 class="nombre-plan">Plan Smart</h3>
+                <div class="precio-plan">$59.900</div>
+                <p class="duracion-plan">Por mes</p>
+                <ul class="beneficios-plan">
+                    <li>Acceso de 6 AM a 4 PM</li>
+                    <li>Sede principal</li>
+                    <li>5 clases grupales/mes</li>
+                    <li>Zona de cardio y pesas</li>
+                    <li>Vestuarios básicos</li>
+                    <li>Evaluación física inicial</li>
+                </ul>
+                <button class="boton-plan">Seleccionar Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="contacto">
+        <div class="logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='95' fill='%23a855f7'/%3E%3Cpath d='M60 85 L60 115 M140 85 L140 115 M70 100 L130 100 M50 75 L70 75 L70 125 L50 125 M130 75 L150 75 L150 125 L130 125' stroke='white' stroke-width='6' fill='none'/%3E%3C/svg%3E" alt="Logo Power Core" style="width: 60px;">
+        </div>
+        <h2 style="color: #a855f7; margin: 20px 0;">POWER CORE</h2>
+        <p style="margin-bottom: 10px;">Cree en ti, supera tus límites</p>
+        <p>© 2025 Power Core Gym. Todos los derechos reservados.</p>
+        
+        <div class="enlaces-sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+
+    <!-- MENÚ DE USUARIO -->
+<div id="menuUsuario" class="menu-usuario oculto">
+    <div class="info-usuario">
+        <img id="fotoUsuario" src="" alt="Foto de perfil" class="foto-perfil-menu">
+        <div>
+            <h3 id="nombreUsuario"></h3>
+            <p id="planUsuario"></p>
+        </div>
+    </div>
+    <div class="opciones-usuario">
+        <button onclick="abrirModalPerfil()" class="opcion-usuario">
+            👤 Mi Perfil
+        </button>
+        <button onclick="abrirModalPassword()" class="opcion-usuario">
+            🔒 Cambiar Contraseña
+        </button>
+        <button onclick="cerrarSesion()" class="opcion-usuario salir">
+            🚪 Cerrar Sesión
+        </button>
+    </div>
+</div>
+
+<!-- MODAL PERFIL -->
+<div id="modalPerfil" class="modal-overlay oculto">
+    <div class="modal-contenido">
+        <button class="cerrar-modal" onclick="cerrarModalPerfil()">✕</button>
+        <h2>Mi Perfil</h2>
+        <div class="perfil-foto-container">
+            <img id="fotoPerfil" src="" alt="Foto" class="foto-perfil-grande">
+            <button onclick="cambiarFoto()" class="boton-cambiar-foto">Cambiar Foto</button>
+        </div>
+        <div class="perfil-info">
+            <p><strong>Nombre de Usuario:</strong> <span id="perfilNombreUsuario"></span></p>
+            <p><strong>Nombre Completo:</strong> <span id="perfilNombreCompleto"></span></p>
+            <p><strong>Email:</strong> <span id="perfilEmail"></span></p>
+            <p><strong>Plan:</strong> <span id="perfilPlan"></span></p>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL CAMBIAR CONTRASEÑA -->
+<div id="modalPassword" class="modal-overlay oculto">
+    <div class="modal-contenido">
+        <button class="cerrar-modal" onclick="cerrarModalPassword()">✕</button>
+        <h2>Cambiar Contraseña</h2>
+        <form id="formCambiarPassword">
+            <div class="grupo-input">
+                <label>Contraseña Actual</label>
+                <input type="password" id="passwordActual" required>
+            </div>
+            <div class="grupo-input">
+                <label>Nueva Contraseña</label>
+                <input type="password" id="passwordNueva" required>
+            </div>
+            <div class="grupo-input">
+                <label>Confirmar Nueva Contraseña</label>
+                <input type="password" id="passwordConfirmar" required>
+            </div>
+            <button type="submit" class="boton-submit">Actualizar Contraseña</button>
+        </form>
+    </div>
+</div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
